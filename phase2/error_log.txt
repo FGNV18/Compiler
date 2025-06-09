@@ -1,0 +1,4 @@
+Syntax Error: Expected ';' after declaration at token 3 (DELIM, "(")
+Entering panic mode recovery in context: syntax_error
+Syntax Error: Invalid statement at token 82 (Start, ".")
+Entering panic mode recovery in context: syntax_error

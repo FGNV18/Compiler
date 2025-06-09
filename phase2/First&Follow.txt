@@ -1,0 +1,79 @@
+**FIRST and FOLLOW Sets**
+
+### FIRST Sets
+
+- FIRST(program) = { def, int, double, id, if, while, print, return, ε }
+- FIRST(fdecls) = { def, ε }
+- FIRST(fdecls') = { def, ε }
+- FIRST(fdec) = { def }
+- FIRST(params) = { int, double, ε }
+- FIRST(params') = { ,, ε }
+- FIRST(declarations) = { int, double, ε }
+- FIRST(declarations') = { int, double, ε }
+- FIRST(decl) = { int, double }
+- FIRST(type) = { int, double }
+- FIRST(varlist) = { id }
+- FIRST(varlist') = { ,, ε }
+- FIRST(statement_seq) = { id, if, while, print, return, ε }
+- FIRST(statement_seq') = { ;, ε }
+- FIRST(statement) = { id, if, while, print, return, ε }
+- FIRST(statement') = { fi, else }
+- FIRST(expr) = { id, number, ( }
+- FIRST(expr') = { +, -, ε }
+- FIRST(term) = { id, number, ( }
+- FIRST(term') = { *, /, %, ε }
+- FIRST(factor) = { number, (, id }
+- FIRST(factor') = { [, (, ε }
+- FIRST(exprseq) = { id, number, (, ε }
+- FIRST(exprseq') = { ,, ε }
+- FIRST(bexpr) = { not, (, id, number }
+- FIRST(bexpr') = { or, ε }
+- FIRST(bterm) = { not, (, id, number }
+- FIRST(bterm') = { and, ε }
+- FIRST(bfactor) = { not, (, id, number }
+- FIRST(comp) = { <, >, == }
+- FIRST(comp') = { =, >, ε }
+- FIRST(comp'') = { =, ε }
+- FIRST(var) = { id }
+- FIRST(var') = { [, ε }
+- FIRST(id) = { letters }
+- FIRST(id') = { letters, digits, ε }
+- FIRST(number) = { integers, doubles }
+
+### FOLLOW Sets
+
+- FOLLOW(program) = { $ }
+- FOLLOW(fdecls) = { int, double, id, if, while, print, return, $ }
+- FOLLOW(fdecls') = { int, double, id, if, while, print, return, $ }
+- FOLLOW(fdec) = { ; }
+- FOLLOW(params) = { ) }
+- FOLLOW(params') = { ) }
+- FOLLOW(declarations) = { id, if, while, print, return, $ }
+- FOLLOW(declarations') = { id, if, while, print, return, $ }
+- FOLLOW(decl) = { ; }
+- FOLLOW(statement_seq) = { fi, od, else, $ }
+- FOLLOW(statement_seq') = { fi, od, else, $ }
+- FOLLOW(statement) = { ;, fi, od, else, $ }
+- FOLLOW(statement') = { fi, else }
+- FOLLOW(expr) = { ), ; }
+- FOLLOW(expr') = { ), ; }
+- FOLLOW(term) = { +, -, ), ; }
+- FOLLOW(term') = { +, -, ), ; }
+- FOLLOW(factor) = { *, /, %, +, -, ), ; }
+- FOLLOW(factor') = { *, /, %, +, -, ), ; }
+- FOLLOW(exprseq) = { ) }
+- FOLLOW(exprseq') = { ) }
+- FOLLOW(bexpr) = { then, do, ) }
+- FOLLOW(bexpr') = { then, do, ) }
+- FOLLOW(bterm) = { or, then, do, ) }
+- FOLLOW(bterm') = { or, then, do, ) }
+- FOLLOW(bfactor) = { and, or, then, do, ) }
+- FOLLOW(comp) = { ) }
+- FOLLOW(comp') = { ) }
+- FOLLOW(comp'') = { ) }
+- FOLLOW(var) = { =, ;, ) }
+- FOLLOW(var') = { =, ;, ) }
+- FOLLOW(id) = { [, =, ;, ) }
+- FOLLOW(id') = { [, =, ;, ) }
+- FOLLOW(number) = { *, /, %, +, -, ), ; }
+
